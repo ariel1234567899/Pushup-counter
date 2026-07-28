@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
     <meta name="theme-color" content="#f3f5f9" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#111319" media="(prefers-color-scheme: dark)" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -71,16 +71,10 @@
 
       <section class="view" id="settings-view" aria-labelledby="settings-heading" hidden>
         <h2 id="settings-heading">Settings</h2>
-        <p class="view-intro">Reminder scheduling is coming soon. Your preferences are saved on this device.</p>
-        <section class="card settings-list" aria-label="Reminder settings">
-          <label class="setting-row"><span><strong>Morning Reminder</strong><small>Delivered when push reminders are enabled.</small></span><input id="morning-reminder" type="time" value="09:00" /></label>
-          <label class="setting-row"><span><strong>Evening Reminder</strong><small>Delivered when push reminders are enabled.</small></span><input id="evening-reminder" type="time" value="18:00" /></label>
-        </section>
-        <section class="card notification-card" aria-labelledby="push-heading">
-          <div><h3 id="push-heading">Push reminders</h3><p id="push-status">Set up the notification service to enable reminders.</p></div>
-          <label class="switch"><input id="push-enabled" type="checkbox" role="switch" aria-describedby="push-status" /><span class="switch-slider"></span><span class="sr-only">Enable push reminders</span></label>
-          <label class="service-url"><span>Notification service URL</span><input id="push-service-url" type="url" inputmode="url" placeholder="https://your-worker.workers.dev" autocapitalize="none" autocomplete="url" /></label>
-          <p class="service-help">Required once: deploy the included notification worker, then paste its HTTPS URL here.</p>
+        <p class="view-intro">Your push-up data stays privately on this device.</p>
+        <section class="card reset-card" aria-labelledby="reset-heading">
+          <div><h3 id="reset-heading">Hard reset</h3><p id="reset-copy">Permanently erase every saved push-up, goal, and history entry from this device.</p></div>
+          <button class="reset-button" id="reset-button" type="button">Hard reset</button>
         </section>
       </section>
     </main>
@@ -90,7 +84,6 @@
       <button class="tab" data-view="history-view" type="button"><span aria-hidden="true">▦</span>History</button>
       <button class="tab" data-view="settings-view" type="button"><span aria-hidden="true">⚙</span>Settings</button>
     </nav>
-    <script src="push-config.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
