@@ -72,6 +72,16 @@
       <section class="view" id="settings-view" aria-labelledby="settings-heading" hidden>
         <h2 id="settings-heading">Settings</h2>
         <p class="view-intro">Your push-up data stays privately on this device.</p>
+        <section class="card settings-card" aria-labelledby="preferences-heading">
+          <h3 id="preferences-heading">Preferences</h3>
+          <label class="setting-row"><span><strong>Saturdays are optional</strong><small>Saturday never breaks or adds to a streak.</small></span><input id="saturdays-optional" type="checkbox" role="switch" /></label>
+          <label class="color-setting"><span><strong>App color</strong><small>Saved with your local data and backups.</small></span><select id="theme-select"><option value="orange">Sunset orange</option><option value="blue">Ocean blue</option><option value="violet">Violet</option><option value="green">Forest green</option><option value="pink">Berry pink</option></select></label>
+        </section>
+        <section class="card backup-card" aria-labelledby="backup-heading">
+          <h3 id="backup-heading">Backup your data</h3><p id="backup-status">Export a copy to the Files app, then restore it here if needed.</p>
+          <div class="backup-actions"><button class="primary-button" id="export-backup" type="button">Export backup</button><button class="secondary-button" id="import-backup" type="button">Restore backup</button></div>
+          <input id="backup-file" type="file" accept="application/json,.json" hidden />
+        </section>
         <section class="card reset-card" aria-labelledby="reset-heading">
           <div><h3 id="reset-heading">Hard reset</h3><p id="reset-copy">Permanently erase every saved push-up, goal, and history entry from this device.</p></div>
           <button class="reset-button" id="reset-button" type="button">Hard reset</button>
@@ -84,6 +94,9 @@
       <button class="tab" data-view="history-view" type="button"><span aria-hidden="true">▦</span>History</button>
       <button class="tab" data-view="settings-view" type="button"><span aria-hidden="true">⚙</span>Settings</button>
     </nav>
+    <section class="backup-modal" id="backup-modal" role="dialog" aria-modal="true" aria-labelledby="backup-modal-heading" hidden>
+      <div class="modal-card"><p class="eyebrow">WEEKLY CHECK-IN</p><h2 id="backup-modal-heading">Did you back up this week?</h2><p>A backup keeps your push-up history safe if this app is reset or removed.</p><button class="primary-button" id="modal-backup-now" type="button">Back up now</button><button class="modal-dismiss" id="modal-dismiss" type="button">Not now</button></div>
+    </section>
     <script src="app.js"></script>
   </body>
 </html>
