@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f3f5f9" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#111319" media="(prefers-color-scheme: dark)" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Push-Ups" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Push-Up Tracker</title>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="app-header">
+        <p class="eyebrow" id="today-label">TODAY</p>
+        <h1>Push-Up Tracker</h1>
+      </header>
+
+      <section class="view active" id="today-view" aria-labelledby="today-heading">
+        <h2 id="today-heading" class="sr-only">Today's progress</h2>
+        <article class="card progress-card">
+          <div class="section-heading"><span>Today's progress</span><span id="percent">0%</span></div>
+          <div class="count" aria-live="polite"><span id="current-count">0</span><span class="count-divider">/</span><span id="goal-count">50</span></div>
+          <div class="progress-track" role="progressbar" aria-label="Daily push-up progress" aria-valuemin="0" aria-valuemax="50" aria-valuenow="0"><div class="progress-fill" id="progress-fill"></div></div>
+          <p class="completion-message" id="completion-message" hidden>Goal Complete! 🎉</p>
+        </article>
+
+        <section class="quick-add" aria-label="Quick add push-ups">
+          <button class="quick-button" data-add="1" type="button">+1</button>
+          <button class="quick-button" data-add="5" type="button">+5</button>
+          <button class="quick-button" data-add="10" type="button">+10</button>
+        </section>
+
+        <form class="custom-add card" id="custom-form">
+          <label for="custom-amount">Add a custom amount</label>
+          <div class="input-row"><input id="custom-amount" inputmode="numeric" type="number" min="1" max="10000" placeholder="0" aria-describedby="custom-error" /><button class="primary-button" type="submit">Add</button></div>
+          <p class="field-error" id="custom-error" role="alert"></p>
+        </form>
+
+        <section class="stats-grid" aria-label="Today’s stats">
+          <article class="card stat"><span>Completed</span><strong id="completed-stat">0</strong></article>
+          <article class="card stat"><span>Remaining</span><strong id="remaining-stat">50</strong></article>
+        </section>
+
+        <section class="card goal-card" aria-labelledby="goal-heading">
+          <div><h2 id="goal-heading">Daily goal</h2><p>Used for today and future days.</p></div>
+          <label class="goal-input"><span class="sr-only">Daily push-up goal</span><input id="goal-input" inputmode="numeric" type="number" min="1" max="100000" value="50" /></label>
+        </section>
+
+        <section class="card history-card" aria-labelledby="week-heading">
+          <div class="section-heading"><h2 id="week-heading">This week</h2><span class="streak">🔥 <strong id="streak-count">0</strong> day streak</span></div>
+          <div class="week-grid" id="week-grid" aria-label="Current week's completion history"></div>
+        </section>
+      </section>
+
+      <section class="view" id="settings-view" aria-labelledby="settings-heading" hidden>
+        <h2 id="settings-heading">Settings</h2>
+        <p class="view-intro">Reminder scheduling is coming soon. Your preferences are saved on this device.</p>
+        <section class="card settings-list" aria-label="Reminder settings">
+          <label class="setting-row"><span><strong>Morning Reminder</strong><small>Placeholder only — no notification is sent.</small></span><input id="morning-reminder" type="time" value="09:00" /></label>
+          <label class="setting-row"><span><strong>Evening Reminder</strong><small>Placeholder only — no notification is sent.</small></span><input id="evening-reminder" type="time" value="18:00" /></label>
+        </section>
+      </section>
+    </main>
+
+    <nav class="tab-bar" aria-label="Primary navigation">
+      <button class="tab active" data-view="today-view" type="button" aria-current="page"><span aria-hidden="true">◉</span>Today</button>
+      <button class="tab" data-view="settings-view" type="button"><span aria-hidden="true">⚙</span>Settings</button>
+    </nav>
+    <script src="app.js"></script>
+  </body>
+</html>
