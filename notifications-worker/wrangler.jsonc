@@ -1,0 +1,8 @@
+{
+  "name": "push-up-tracker-notifications",
+  "main": "src/index.js",
+  "compatibility_date": "2026-07-28",
+  "compatibility_flags": ["nodejs_compat"],
+  "kv_namespaces": [{ "binding": "SUBSCRIPTIONS", "id": "REPLACE_WITH_YOUR_KV_NAMESPACE_ID" }],
+  "triggers": { "crons": ["* * * * *"] }
+}

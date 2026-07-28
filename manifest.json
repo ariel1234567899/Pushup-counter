@@ -1,6 +1,7 @@
 {
   "name": "Push-Up Tracker",
   "short_name": "Push-Ups",
+  "id": "./",
   "description": "A private, offline daily push-up tracker.",
   "start_url": "./",
   "scope": "./",

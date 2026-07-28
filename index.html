@@ -30,6 +30,7 @@
         </article>
 
         <section class="quick-add" aria-label="Quick add push-ups">
+          <button class="quick-button subtract-button" data-adjust="-1" type="button" aria-label="Subtract one push-up">−1</button>
           <button class="quick-button" data-add="1" type="button">+1</button>
           <button class="quick-button" data-add="5" type="button">+5</button>
           <button class="quick-button" data-add="10" type="button">+10</button>
@@ -57,20 +58,39 @@
         </section>
       </section>
 
+      <section class="view" id="history-view" aria-labelledby="history-heading" hidden>
+        <h2 id="history-heading">History</h2>
+        <p class="view-intro">Choose a date to see your completed push-ups and goal status.</p>
+        <section class="card calendar-card" aria-label="Push-up history calendar">
+          <div class="calendar-header"><button class="calendar-nav" id="previous-month" type="button" aria-label="Previous month">‹</button><h3 id="calendar-month">Month</h3><button class="calendar-nav" id="next-month" type="button" aria-label="Next month">›</button></div>
+          <div class="calendar-weekdays" aria-hidden="true"><span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span></div>
+          <div class="calendar-grid" id="calendar-grid" aria-label="Calendar dates"></div>
+        </section>
+        <section class="card history-detail" id="history-detail" aria-live="polite"></section>
+      </section>
+
       <section class="view" id="settings-view" aria-labelledby="settings-heading" hidden>
         <h2 id="settings-heading">Settings</h2>
         <p class="view-intro">Reminder scheduling is coming soon. Your preferences are saved on this device.</p>
         <section class="card settings-list" aria-label="Reminder settings">
-          <label class="setting-row"><span><strong>Morning Reminder</strong><small>Placeholder only — no notification is sent.</small></span><input id="morning-reminder" type="time" value="09:00" /></label>
-          <label class="setting-row"><span><strong>Evening Reminder</strong><small>Placeholder only — no notification is sent.</small></span><input id="evening-reminder" type="time" value="18:00" /></label>
+          <label class="setting-row"><span><strong>Morning Reminder</strong><small>Delivered when push reminders are enabled.</small></span><input id="morning-reminder" type="time" value="09:00" /></label>
+          <label class="setting-row"><span><strong>Evening Reminder</strong><small>Delivered when push reminders are enabled.</small></span><input id="evening-reminder" type="time" value="18:00" /></label>
+        </section>
+        <section class="card notification-card" aria-labelledby="push-heading">
+          <div><h3 id="push-heading">Push reminders</h3><p id="push-status">Set up the notification service to enable reminders.</p></div>
+          <label class="switch"><input id="push-enabled" type="checkbox" role="switch" aria-describedby="push-status" /><span class="switch-slider"></span><span class="sr-only">Enable push reminders</span></label>
+          <label class="service-url"><span>Notification service URL</span><input id="push-service-url" type="url" inputmode="url" placeholder="https://your-worker.workers.dev" autocapitalize="none" autocomplete="url" /></label>
+          <p class="service-help">Required once: deploy the included notification worker, then paste its HTTPS URL here.</p>
         </section>
       </section>
     </main>
 
     <nav class="tab-bar" aria-label="Primary navigation">
       <button class="tab active" data-view="today-view" type="button" aria-current="page"><span aria-hidden="true">◉</span>Today</button>
+      <button class="tab" data-view="history-view" type="button"><span aria-hidden="true">▦</span>History</button>
       <button class="tab" data-view="settings-view" type="button"><span aria-hidden="true">⚙</span>Settings</button>
     </nav>
+    <script src="push-config.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
