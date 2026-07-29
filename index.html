@@ -74,7 +74,8 @@
         <p class="view-intro">Your push-up data stays privately on this device.</p>
         <section class="card settings-card" aria-labelledby="preferences-heading">
           <h3 id="preferences-heading">Preferences</h3>
-          <label class="setting-row"><span><strong>Saturdays are optional</strong><small>Saturday never breaks or adds to a streak.</small></span><input id="saturdays-optional" type="checkbox" role="switch" /></label>
+          <label class="setting-row"><span><strong>Saturdays are optional</strong><small>An unfinished Saturday never breaks a streak; a completed one adds to it.</small></span><input id="saturdays-optional" type="checkbox" role="switch" /></label>
+          <label class="color-setting"><span><strong>Day boundary</strong><small>Choose when a new tracking day begins.</small></span><select id="day-boundary-select"><option value="0">12 AM to 12 AM</option><option value="2">2 AM to 2 AM</option><option value="4">4 AM to 4 AM</option></select></label>
           <label class="color-setting"><span><strong>App color</strong><small>Saved with your local data and backups.</small></span><select id="theme-select"><option value="orange">Sunset orange</option><option value="blue">Ocean blue</option><option value="violet">Violet</option><option value="green">Forest green</option><option value="pink">Berry pink</option></select></label>
         </section>
         <section class="card backup-card" aria-labelledby="backup-heading">
