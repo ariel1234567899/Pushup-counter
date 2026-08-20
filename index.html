@@ -62,11 +62,16 @@
         <h2 id="history-heading">History</h2>
         <p class="view-intro">Choose a date to see your completed push-ups and goal status.</p>
         <section class="card calendar-card" aria-label="Push-up history calendar">
-          <div class="calendar-header"><button class="calendar-nav" id="previous-month" type="button" aria-label="Previous month">‹</button><h3 id="calendar-month">Month</h3><button class="calendar-nav" id="next-month" type="button" aria-label="Next month">›</button></div>
+          <div class="calendar-header"><button class="calendar-nav" id="previous-month" type="button" aria-label="Previous month">‹</button><div><h3 id="calendar-month">Month</h3><p class="month-total" id="month-total">0 push-ups</p></div><button class="calendar-nav" id="next-month" type="button" aria-label="Next month">›</button></div>
           <div class="calendar-weekdays" aria-hidden="true"><span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span></div>
           <div class="calendar-grid" id="calendar-grid" aria-label="Calendar dates"></div>
         </section>
         <section class="card history-detail" id="history-detail" aria-live="polite"></section>
+        <section class="card history-stats" aria-labelledby="history-stats-heading">
+          <h3 id="history-stats-heading">Progress stats</h3>
+          <div class="stats-summary"><div><span>Best day this month</span><strong id="month-best">0</strong></div><div><span>Best day this year</span><strong id="year-best">0</strong></div><div><span>Longest streak</span><strong id="longest-streak">0 days</strong></div><div><span>All-time push-ups</span><strong id="all-time-total">0</strong></div></div>
+          <label class="best-set-input"><span><strong>Personal best set</strong><small>Largest number you have completed in one set.</small></span><input id="best-set" inputmode="numeric" type="number" min="0" max="100000" placeholder="0" /></label>
+        </section>
       </section>
 
       <section class="view" id="settings-view" aria-labelledby="settings-heading" hidden>
@@ -76,7 +81,12 @@
           <h3 id="preferences-heading">Preferences</h3>
           <label class="setting-row"><span><strong>Saturdays are optional</strong><small>An unfinished Saturday never breaks a streak; a completed one adds to it.</small></span><input id="saturdays-optional" type="checkbox" role="switch" /></label>
           <label class="color-setting"><span><strong>Day boundary</strong><small>Choose when a new tracking day begins.</small></span><select id="day-boundary-select"><option value="0">12 AM to 12 AM</option><option value="2">2 AM to 2 AM</option><option value="4">4 AM to 4 AM</option></select></label>
-          <label class="color-setting"><span><strong>App color</strong><small>Saved with your local data and backups.</small></span><select id="theme-select"><option value="orange">Sunset orange</option><option value="blue">Ocean blue</option><option value="violet">Violet</option><option value="green">Forest green</option><option value="pink">Berry pink</option></select></label>
+          <label class="color-setting"><span><strong>App color</strong><small>Saved with your local data and backups.</small></span><select id="theme-select"><option value="orange">Sunset orange</option><option value="blue">Ocean blue</option><option value="violet">Violet</option><option value="green">Forest green</option><option value="pink">Berry pink</option><option value="red">Classic red</option><option value="teal">Teal</option><option value="gold">Golden yellow</option><option value="indigo">Indigo</option><option value="slate">Slate</option></select></label>
+        </section>
+        <section class="card settings-card" aria-labelledby="auto-goal-heading">
+          <h3 id="auto-goal-heading">Automatic goal increase</h3>
+          <label class="setting-row"><span><strong>Increase goal automatically</strong><small>Applied on Sunday using the interval and increase below.</small></span><input id="auto-goal-enabled" type="checkbox" role="switch" /></label>
+          <div class="goal-automation"><label><span>Frequency</span><select id="auto-goal-frequency"><option value="weekly">Every week</option><option value="biweekly">Every 2 weeks</option><option value="monthly">Monthly</option></select></label><label><span>Add push-ups</span><input id="auto-goal-increment" inputmode="numeric" type="number" min="1" max="100000" value="1" /></label></div>
         </section>
         <section class="card backup-card" aria-labelledby="backup-heading">
           <h3 id="backup-heading">Backup your data</h3><p id="backup-status">Export a copy to the Files app, then restore it here if needed.</p>
@@ -87,6 +97,7 @@
           <div><h3 id="reset-heading">Hard reset</h3><p id="reset-copy">Permanently erase every saved push-up, goal, and history entry from this device.</p></div>
           <button class="reset-button" id="reset-button" type="button">Hard reset</button>
         </section>
+        <p class="app-version">Version 3</p>
       </section>
     </main>
 
