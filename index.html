@@ -55,6 +55,8 @@
         <section class="card history-card" aria-labelledby="week-heading">
           <div class="section-heading"><h2 id="week-heading">This week</h2><span class="streak">🔥 <strong id="streak-count">0</strong> day streak</span></div>
           <div class="week-grid" id="week-grid" aria-label="Current week's completion history"></div>
+          <div class="day-tools"><button id="undo-button" type="button" disabled aria-label="Undo last input">↶ Undo</button><button id="redo-button" type="button" disabled aria-label="Redo input">Redo ↷</button></div>
+          <details class="input-log"><summary>Today’s inputs <span id="input-log-count">0</span></summary><ul id="input-log-list"></ul></details>
         </section>
       </section>
 
@@ -93,11 +95,11 @@
           <div class="backup-actions"><button class="primary-button" id="export-backup" type="button">Export backup</button><button class="secondary-button" id="import-backup" type="button">Restore backup</button></div>
           <input id="backup-file" type="file" accept="application/json,.json" hidden />
         </section>
-        <section class="card reset-card" aria-labelledby="reset-heading">
-          <div><h3 id="reset-heading">Hard reset</h3><p id="reset-copy">Permanently erase every saved push-up, goal, and history entry from this device.</p></div>
-          <button class="reset-button" id="reset-button" type="button">Hard reset</button>
-        </section>
-        <p class="app-version">Version 3</p>
+        <details class="card reset-card">
+          <summary>Hard reset</summary>
+          <div class="reset-content"><h3 id="reset-heading">Erase all app data</h3><p id="reset-copy">Permanently erase every saved push-up, goal, and history entry from this device.</p><button class="reset-button" id="reset-button" type="button">Hard reset</button></div>
+        </details>
+        <p class="app-version">Version 3.1<br /><span>Counting is not meant to be exact. If you lose count during a set, add the last number you remember. Keep your sets honest—don’t add an unrealistic amount just because you are unsure.</span></p>
       </section>
     </main>
 
