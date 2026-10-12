@@ -89,6 +89,7 @@
         <section class="card settings-card" aria-labelledby="auto-goal-heading">
           <h3 id="auto-goal-heading">Automatic goal increase</h3>
           <label class="setting-row"><span><strong>Increase goal automatically</strong><small>Applied on Sunday using the interval and increase below.</small></span><input id="auto-goal-enabled" type="checkbox" role="switch" /></label>
+          <label class="setting-row"><span><strong>Require a weekly majority</strong><small>Only increase after completing more than half of that week’s eligible days. Optional or excluded unfinished days are not counted.</small></span><input id="auto-goal-majority" type="checkbox" role="switch" /></label>
           <div class="goal-automation"><label><span>Frequency</span><select id="auto-goal-frequency"><option value="weekly">Every week</option><option value="biweekly">Every 2 weeks</option><option value="monthly">Monthly</option></select></label><label><span>Add push-ups</span><input id="auto-goal-increment" inputmode="numeric" type="number" min="1" max="100000" value="1" /></label></div>
         </section>
         <section class="card backup-card" aria-labelledby="backup-heading">
@@ -100,7 +101,7 @@
           <summary>Hard reset</summary>
           <div class="reset-content"><h3 id="reset-heading">Erase all app data</h3><p id="reset-copy">Permanently erase every saved push-up, goal, and history entry from this device.</p><button class="reset-button" id="reset-button" type="button">Hard reset</button></div>
         </details>
-        <p class="app-version">Version 3.5<br /><span>Counting is not meant to be exact. If you lose count during a set, add the last number you remember. Keep your sets honest—don’t add an unrealistic amount just because you are unsure.</span></p>
+        <p class="app-version">Version 3.6<br /><span>Counting is not meant to be exact. If you lose count during a set, add the last number you remember. Keep your sets honest—don’t add an unrealistic amount just because you are unsure.</span></p>
       </section>
     </main>
 
